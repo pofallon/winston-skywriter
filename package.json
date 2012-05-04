@@ -1,7 +1,7 @@
 {
   "name": "winston-skywriter",
   "description": "A Windows Azure transport for winston",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Paul O'Fallon <paul@ofallonfamily.com>",
   "repository": {
     "type": "git",
@@ -17,6 +17,6 @@
     "should": "0.6.x"
   },
   "main": "./lib/winston-skywriter",
-  "scripts": { "test": "vows test/*-test.js --spec" },
+  "scripts": { "test": "mocha test/test.js" },
   "engines": { "node": ">= 0.6.0" }
 }

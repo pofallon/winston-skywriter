@@ -13,53 +13,33 @@ var table = require('bluesky').storage({account: testCredentials.account, key: t
 
 var winston = require('winston');
 var Skywriter = require('../lib/winston-skywriter').Skywriter;
-/* winston.add(Skywriter,{
+winston.add(Skywriter,{
     account: testCredentials.account,
         key: testCredentials.key,
       table: table.name,
       level: 'warn',
-  partition: 'partitionId'
+  partition: require('os').hostname() + ':' + process.pid
 }); 
-console.dir(winston); */
-
-// partition: require('os').hostname() + ':' + process.pid
+winston.remove(winston.transports.Console);
 
 describe('winston-skywriter:', function() {
 
-  var logger;
-
   before(function() {
-    logger = new (winston.Logger)({
-      transports: [
-        new (winston.transports.Skywriter)({
-            account: testCredentials.account,
-                key: testCredentials.key,
-              table: table.name,
-              level: 'warn',
-          partition: 'partitionId'
-        })
-      ]
-    });
   });
 
   describe('a logger', function() {
 
     it('should log to Azure', function(done) {
 
-      logger.on('error', function(err) {
-        should.not.exist(err);
-      });
-
-      logger.on('logged', function (rowKey) {
-        done();
-      });
-
-      logger.warn('Warning, you are logging to Azure', 
+      winston.warn('Warning, you are logging to Azure', 
         {uno: 1, dos: 'two', tres: true}, 
         function (err, level, msg, meta) {
           should.not.exist(err);
           level.should.equal('warn');
           msg.should.equal('Warning, you are logging to Azure');
+          setTimeout(function() {
+            done();
+          }, 100);
         }
       );
 
