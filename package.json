@@ -13,7 +13,8 @@
   },
   "devDependencies": {
     "winston": "0.5.x",
-    "mocha": "1.0.x"
+    "mocha": "1.0.x",
+    "should": "0.6.x"
   },
   "main": "./lib/winston-skywriter",
   "scripts": { "test": "vows test/*-test.js --spec" },
