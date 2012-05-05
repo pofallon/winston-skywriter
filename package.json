@@ -1,6 +1,6 @@
 {
   "name": "winston-skywriter",
-  "description": "A Windows Azure transport for winston",
+  "description": "A Windows Azure table storage transport for winston",
   "version": "0.1.0",
   "author": "Paul O'Fallon <paul@ofallonfamily.com>",
   "repository": {
