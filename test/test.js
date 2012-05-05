@@ -39,7 +39,7 @@ describe('winston-skywriter:', function() {
           msg.should.equal('Warning, you are logging to Azure');
           setTimeout(function() {
             done();
-          }, 100);
+          }, 500);
         }
       );
 
