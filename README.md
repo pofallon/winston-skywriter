@@ -34,7 +34,7 @@ The Skywriter transport accepts the following options:
 
 When running multiple node instances across multiple hosts, a good value for 'partition' is:  
 ``` js
-partition: require('os').hostname() + ':' + process.pid`
+partition: require('os').hostname() + ':' + process.pid
 ```
 
 [0]: http://www.windowsazure.com/en-us/develop/nodejs/
