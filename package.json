@@ -1,7 +1,7 @@
 {
   "name": "winston-skywriter",
   "description": "A Windows Azure table storage transport for winston",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Paul O'Fallon <paul@ofallonfamily.com>",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   },
   "keywords": ["logging", "sysadmin", "tools", "winston", "azure"],
   "dependencies": {
-    "bluesky": "0.5.x"
+    "bluesky": ">= 0.5.2"
   },
   "devDependencies": {
     "winston": "0.5.x",
