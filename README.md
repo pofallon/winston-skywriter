@@ -27,6 +27,7 @@ The Skywriter transport accepts the following options:
 * __level:__ Level of messages that this transport should log (defaults to `info`).
 * __account:__ The name of the Windows Azure storage account to use
 * __key:__ The access key used to authenticate into this storage account
+* __table:__ The name of the table to log to (defaults to 'log').  Must already exist.
 * __partition:__ The value to use for the PartitionKey in each row (defaults to 'log').  The RowKey is an auto-generated GUID.
 * __columns:__ If `true`, the transport will store the metadata key/value pairs in individual columns (this can be helpful when querying table storage for log entries with specific metadata values).  The default is to store the entire `meta` value as a single JSON string in a 'meta' column.
 
